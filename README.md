@@ -1,10 +1,16 @@
-# 🌐 Resipe
+# 📝 Keeper
 
-Welcome to the **Resipe** project! 
+Welcome to the **Keeper** project! 
 
-A recipe sharing webapp where users' karma and location affect their permissions to perform operations such as view recipe or upvote recipe, it fetches the data dynamically from a MySQL server and uses opal for authorisation implementing custom opal data fetcher for mysql.
+A note/thought sharing webapp.
+Roles: member, admin
+1: member can view all notes (his and create by others), he can update and delete his notes/thoughts.
+2: Admin can do anything create, view, update or deletion of notes.
 
-https://github.com/bhimeshagrawal/Resipe/assets/65838772/57e79d7a-351f-4c61-abb4-e672b0f6b426
+
+https://github.com/sonu2164/keeper_opal_auth_quira_submission/assets/102368177/907af141-07f9-417d-9053-fecbd08cbd1c
+
+
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -15,14 +21,15 @@ https://github.com/bhimeshagrawal/Resipe/assets/65838772/57e79d7a-351f-4c61-abb4
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
 - [License](#license)
+- [Acknowledgements](#acknowledgements)
 
 
 ## Introduction
 Resipe is a recipe sharing webapp where user's karma and location affect their permissions to perform operations such as view recipe or upvote recipe, it fetches the data dynamically from a mysql server and uses auth0 for authentication, opal for authorisation implementing custom opal data fetcher for mysql.
 
 Two main goals of this project were:
-- to build a custom opal data fetcher for mysql
-- to use this custom data fetcher with mysql for real world applications
+- to showcase authorization using opal.
+- to use custom data fetcher with mysql for real world applications.
 
 ## Features
 - Create new recipes and share them with everyone
@@ -31,10 +38,7 @@ Two main goals of this project were:
 - Gain karma points when you upvote or create new recipes
 
 ## TechStack
-- Reactjs for frontend
-- MUI for styling and frontend components
-- Zustand for global state management in frontend
-- Auth0 for authentication (authN)
+- Reactjs, Maretial UI for frontend
 - Opal for authorisation (authZ)
 - Nodejs (Express) for backend
 - MySQL for database
@@ -46,8 +50,8 @@ To install and run this project, we have three services to start, follow these s
 
 1. **Clone the repository**
    ```bash
-    git clone https://github.com/bhimeshagrawal/Resipe.git
-    cd Resipe
+    git clone https://github.com/sonu2164/keeper_opal_auth_quira_submission.git
+    cd keeper_opal_auth_quira_submission
     ```
    
 2. **Start the OPAL Service**
@@ -76,24 +80,20 @@ To install and run this project, we have three services to start, follow these s
    npm run prisma:migrate
    npm run dev
    ```
-   Now our server will start at `http://localhost:3000`
+   Now our server will start at `http://localhost:3001`
 
-5. **Creating Auth0 Credentials**
-   - Go to Auth0 and create credentials for your single page app (react)
-   - Disable email+password login and only enable google oauth login
-   - Replace the `domain` and `clientId` from auth0 in `App.jsx` file present in client
    
 7. **Start the client**
    Before starting client make sure that server is up and then run following commands in `client` directory to start the client:
    ```bash
    npm install
-   npm run dev
+   npm start
    ```
-   Now our client will start at `http://localhost:5173`
+   Now our client will start at `http://localhost:3000`
 
 ## Usage
 
-You can run the client at `http://localhost:5173`
+You can run the client at `http://localhost:3000`
 - Initially every logged in user will have **Foodie** role with 0 karma and "India" as default country.
 - Every Foodie user can view recipe of same country of his current location, you can change you current location from navbar.
 - A Foodie user cannot upvote to any of recipes
@@ -112,7 +112,7 @@ You can publish a data update event by making a POST request to url `http://loca
 
 ## Project Structure
 ```
-Resipe
+keeper_opal_auth_quira_submission
 ├── client/
 ├── server/
 ├── sql/
@@ -139,7 +139,7 @@ Contributions are welcome! If you have any suggestions, bug reports, or improvem
 1. **Fork the Repository**: Click the "Fork" button at the top right of this page.
 2. **Clone the Fork**: 
     ```bash
-    git clone https://github.com/yourusername/Resipe.git
+    git clone https://github.com/yourusername/keeper_opal_auth_quira_submission.git
     ```
 3. **Create a Branch**:
     ```bash
@@ -153,5 +153,6 @@ This project is licensed under the Apache License. See the [LICENSE](LICENSE) fi
 
 ---
 
-Thank you for visiting our project! If you have any questions or need further assistance, feel free to reach out.
+## Acknowledgements
+Special thanks to @bhimeshagrawal for his contribution to the MySQL fetcher.
 
