@@ -1,0 +1,52 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  email     String    @unique
+  name      String
+  role      String    @default("member")
+  password  String    
+  createdAt DateTime  @default(now())
+
+  // Define relationships
+  notes     Note[]    // User can have multiple notes
+  likes     Like[]    // User can have multiple likes
+
+  @@map("users")
+}
+
+
+model Note {
+  id          Int       @id @default(autoincrement())
+  title       String
+  description String
+  createdAt   DateTime  @default(now())
+
+  // Define relationships
+  ownerId     Int
+  user        User      @relation(fields: [ownerId], references: [id])
+
+  likes       Like[]    // Note can have multiple likes
+
+  @@map("notes")
+}
+
+model Like {
+  id        Int       @id @default(autoincrement())
+  noteId    Int
+  userId    Int
+  createdAt DateTime  @default(now())
+
+  // Define relationships
+  note      Note      @relation(fields: [noteId], references: [id])
+  liker     User      @relation(fields: [userId], references: [id])
+
+  @@map("likes")
+}

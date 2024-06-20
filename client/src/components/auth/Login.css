@@ -1,0 +1,55 @@
+/* Login.css */
+
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 60vh;
+    justify-content: center;
+}
+
+.register-link {
+    color: #f5ba13;
+    cursor: pointer;
+    font-weight: bold;
+
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
+
+.login-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group input[type='submit'] {
+    background-color: #f5ba13;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.form-group input[type='submit']:hover {
+    background-color: #d49d07;
+}
