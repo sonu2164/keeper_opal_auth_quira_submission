@@ -1,0 +1,29 @@
+{
+    "name": "Keeper Web App Development",
+    "image": "permitio/opal-client:latest",
+    "forwardPorts": [
+        3000,
+        3001,
+        8083,
+        7002,
+        8181
+    ],
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "javascript.validate.enable": true,
+                "python.pythonPath": "/usr/local/bin/python",
+                "python.linting.enabled": true,
+                "python.linting.pylintEnabled": true,
+                "python.formatting.provider": "black",
+                "editor.formatOnSave": true
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-vscode.vscode-typescript-tslint",
+                "esbenp.prettier-vscode"
+            ]
+        }
+    },
+    "postCreateCommand": "npm install --prefix client && npm install --prefix server && python setup.py install"
+}
